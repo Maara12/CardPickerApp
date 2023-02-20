@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardPickerApp"
         mc:Ignorable="d"
-        Title="CardPicker" Height="450" Width="800">
+        Title="CardPicker" Height="300" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="How many Cards should I pick ?" FontSize="20"/>
+            <Slider x:Name="numOfCards" Maximum="15" Minimum="1" TickPlacement="BottomRight" AutoToolTipPlacement="TopLeft" IsSnapToTickEnabled="True" Foreground="Black"/>
+        </StackPanel>
+        <Button Content="Pick Some Cards" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Click="Button_Click"/>
+        <ListBox x:Name="listOfCards" Grid.Column="1" Margin="20,20,20,20" FontSize="20" Grid.RowSpan="2"/>
     </Grid>
 </Window>
